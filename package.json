@@ -1,0 +1,49 @@
+{
+  "name": "Backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "migrateh": "heroku run knex migrate:latest -a potluck-planner-03",
+    "rollbackh": "heroku run knex migrate: rollback -a potluck-planner-03",
+    "databaseh": "heroku pg:psql -a potluck-planner-03",
+    "seedh": "heroku run knex seed:run -a potluck-planner-03 ",
+    "deploy": "git push heroku main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pot-Luck-Planner-03/Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pot-Luck-Planner-03/Backend/issues"
+  },
+  "homepage": "https://github.com/Pot-Luck-Planner-03/Backend#readme",
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "15.11.0",
+    "npm": "7.6.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jest": "^27.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.95.6",
+    "pg": "^8.6.0"
+  }
+}
