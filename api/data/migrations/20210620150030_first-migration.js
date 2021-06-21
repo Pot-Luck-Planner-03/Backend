@@ -1,0 +1,78 @@
+
+exports.up = function(knex) {
+  return knex.schema
+    .createTable('users', users  => {
+        users.increments('users_id')
+        users.string('username')
+            .notNullable()
+            .unique()
+        users.string('password')
+    })
+    .createTable('potlucks', potlucks => {
+        potlucks.increments('potlucks_id')
+        potlucks.string('title')
+            .notNullable()
+            .unique()
+        potlucks.text('potluck_description')
+        potlucks.date('potluck_date')
+            .notNullable()
+        potlucks.time('potluck_time')
+            .notNullable()
+        potlucks.string('location')
+            .notNullable()
+    })
+    .createTable('foods', foods => {
+        foods.increments('food')
+        foods.string('food_name')
+            .notNullable()
+            .unique()
+        foods.text('food_description')
+    })
+    .createTable('potluck_users', table => {
+        table.increments('potluck_users_id')
+        table.integer('potluck_id')
+            .unsigned()
+            .notNullable()
+            .references('potluck_id')
+            .inTable('potlucks')
+            .onUpdate('CASCADE')
+            .onDelete('CASCADE')
+        table.integer('user_id')
+            .unsigned()
+            .notNullable()
+            .references('user_id')
+            .inTable('users')
+            .onUpdate('CASCADE')
+            .onDelete('CASCADE')
+        table.integer('attending')
+            .notNullable()
+            .defaultTo(0)
+    })
+    .createTable('potluck_foods', table => {
+        table.increments('potluck_food_id')
+        table.integer('potluck_id')
+            .unsigned()
+            .notNullable()
+            .references('potluck_id')
+            .inTable('potlucks')
+            .onUpdate('CASCADE')
+            .onDelete('CASCADE')
+        table.integer('food_id')
+            .unsigned()
+            .notNullable()
+            .references('food_id')
+            .inTable('foods')
+            .onUpdate('CASCADE')
+            .onDelete('CASCADE')
+    })
+    
+};
+
+exports.down = function(knex) {
+  return knex.schema    
+    .dropTableIfExists('potluck_food')
+    .dropTableIfExists('potluck_users')
+    .dropTableIfExists('foods')
+    .dropTableIfExists('potlucks')
+    .dropTableIfExists('users')
+};
