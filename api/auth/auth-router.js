@@ -33,6 +33,8 @@ router.post("/login", validateBody, checkUsernameExists, (req, res, next) => {
     })
     res.status(200).json({
       message: `Welcome back ${username}`,
+      user_id,
+      username,
       token
     })
   } else {
