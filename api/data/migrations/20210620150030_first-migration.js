@@ -1,32 +1,31 @@
-
 exports.up = function(knex) {
   return knex.schema
-    .createTable('users', users  => {
-        users.increments('users_id')
-        users.string('username')
+    .createTable('users', table  => {
+        table.increments('users_id')
+        table.string('username')
             .notNullable()
             .unique()
-        users.string('password')
+        table.string('password')
     })
-    .createTable('potlucks', potlucks => {
-        potlucks.increments('potlucks_id')
-        potlucks.string('title')
+    .createTable('potlucks', table => {
+        table.increments('potlucks_id')
+        table.string('title')
             .notNullable()
             .unique()
-        potlucks.text('potluck_description')
-        potlucks.date('potluck_date')
+        table.text('potluck_description')
+        table.date('potluck_date')
             .notNullable()
-        potlucks.time('potluck_time')
+        table.time('potluck_time')
             .notNullable()
-        potlucks.string('location')
+        table.string('location')
             .notNullable()
     })
-    .createTable('foods', foods => {
-        foods.increments('food')
-        foods.string('food_name')
+    .createTable('foods', table => {
+        table.increments('food')
+        table.string('food_name')
             .notNullable()
             .unique()
-        foods.text('food_description')
+        table.text('food_description')
     })
     .createTable('potluck_users', table => {
         table.increments('potluck_users_id')
