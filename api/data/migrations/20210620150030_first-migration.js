@@ -1,15 +1,16 @@
 exports.up = function(knex) {
   return knex.schema
     .createTable('users', table  => {
-        table.increments('users_id')
+        table.increments('user_id')
         table.string('username')
             .notNullable()
             .unique()
         table.string('password')
+            .notNullable()
     })
     .createTable('potlucks', table => {
-        table.increments('potlucks_id')
-        table.string('title')
+        table.increments('potluck_id')
+        table.string('potluck_name')
             .notNullable()
             .unique()
         table.text('potluck_description')
@@ -17,18 +18,18 @@ exports.up = function(knex) {
             .notNullable()
         table.time('potluck_time')
             .notNullable()
-        table.string('location')
+        table.string('potluck_location')
             .notNullable()
     })
     .createTable('foods', table => {
-        table.increments('food')
+        table.increments('food_id')
         table.string('food_name')
             .notNullable()
             .unique()
         table.text('food_description')
     })
     .createTable('potluck_users', table => {
-        table.increments('potluck_users_id')
+        table.increments('potluck_user_id')
         table.integer('potluck_id')
             .unsigned()
             .notNullable()
@@ -45,7 +46,7 @@ exports.up = function(knex) {
             .onDelete('CASCADE')
         table.integer('attending')
             .notNullable()
-            .defaultTo(0)
+            .defaultTo('0')
     })
     .createTable('potluck_foods', table => {
         table.increments('potluck_food_id')
@@ -69,7 +70,7 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
   return knex.schema    
-    .dropTableIfExists('potluck_food')
+    .dropTableIfExists('potluck_foods')
     .dropTableIfExists('potluck_users')
     .dropTableIfExists('foods')
     .dropTableIfExists('potlucks')

@@ -6,24 +6,24 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('potluck_foods').insert([
         {
-          potluck_id: 3,
-          food_id: 2
+          potluck_id: '3',
+          food_id: '2'
         },
         {
-          potluck_id: 2,
-          food_id: 5
+          potluck_id: '2',
+          food_id: '5'
         },
         {
-          potluck_id: 1,
-          food_id: 4
+          potluck_id: '1',
+          food_id: '4'
         },
         {
-          potluck_id: 3,
-          food_id: 1
+          potluck_id: '3',
+          food_id: '1'
         },
         {
-          potluck_id: 3,
-          food_id: 6
+          potluck_id: '3',
+          food_id: '6'
         },
       ]);
     });

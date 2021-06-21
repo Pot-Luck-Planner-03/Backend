@@ -5,27 +5,27 @@ exports.seed = function(knex) {
       return knex('foods').insert([
         {
           food_name: 'Pineapple', 
-          description: 'part pine, part apple'
+          food_description: 'part pine, part apple'
         },
         {
           food_name: 'Sweet Potatoes', 
-          description: 'mashed?  fried?  u choose'
+          food_description: 'mashed?  fried?  u choose'
         },
         {
           food_name: 'Pizza', 
-          description: 'Veeeeegan pls'
+          food_description: 'Veeeeegan pls'
         },
         {
           food_name: 'LaCroix', 
-          description: ''
+          food_description: ''
         },
         {
           food_name: 'Masala', 
-          description: 'better make me sweat'
+          food_description: 'better make me sweat'
         },
         {
           food_name: 'Ramen', 
-          description: ''
+          food_description: ''
         },
       ]);
     });

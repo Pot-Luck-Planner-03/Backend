@@ -6,23 +6,23 @@ exports.seed = function(knex) {
         {
           potluck_name: 'Tasty Foodz Partay',
           potluck_description: 'bring the tastiest food pls.  NO BAD FOOD',
-          date: '7/15/2021',
-          time: '06:00 PM',
-          location: '1403 Park Ave, Long Beach CA'
+          potluck_date: '2021/07/15',
+          potluck_time: '06:00:00',
+          potluck_location: '1403 Park Ave, Long Beach CA'
         },
         {
           potluck_name: 'Yum Yum Food Time',
           potluck_description: 'yumyumyumyumyumyumyum',
-          date: '8/20/2021',
-          time: '05:00 PM',
-          location: '1111 E 2222 S, SLC UT'
+          potluck_date: '2021/08/20',
+          potluck_time: '05:00:00',
+          potluck_location: '1111 E 2222 S, SLC UT'
         },
         {
           potluck_name: 'MM..FOOD',
           potluck_description: 'got more cheese than doritos, cheetos, or fritos',
-          date: '7/31/2021',
-          time: '07:30 PM',
-          location: '45 S 5th Ave, New York NY'
+          potluck_date: '2021/07/28',
+          potluck_time: '07:30:00',
+          potluck_location: '45 S 5th Ave, New York NY'
         },
       ]);
     });
