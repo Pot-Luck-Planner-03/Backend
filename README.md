@@ -6,7 +6,7 @@
 
 ### ----------------  ENDPOINTS  -------------------- 
 
-### [POST] /register  -- creates a new user
+### [POST] /api/auth/register  -- creates a new user
 <details>
     <summary> WHAT TO SEND </summary>
     ```JSON
@@ -27,7 +27,7 @@
 </details>
 
 
-### [POST] /login  -- logs in an existing user
+### [POST] /api/auth/login  -- logs in an existing user
 <details>
     <summary> WHAT TO SEND </summary>
     ```
@@ -46,6 +46,28 @@
         "username": "username",
         "token": "TOKEN"
     }
+    ```
+</details>
+
+### [GET] /api/users  -- gets list of users
+
+<details>
+    <summary> WHAT YOU GET BACK </summary>
+    ```
+    [
+        {
+            "user_id": 1,
+            "username": "RZA"
+        },
+        {
+            "user_id": 2,
+            "username": "GZA"
+        },
+        {
+            "user_id": 3,
+            "username": "ODB"
+        }
+    ]
     ```
 </details>
 

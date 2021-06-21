@@ -15,7 +15,7 @@ server.use('/api/auth', authRouter)
 server.use('/api/users', usersRouter)
 
 server.get('/', (req, res, next) => {
-  res.send('<p>Here\'s the <a href="https://github.com/Pot-Luck-Planner-03/Backend">README</a></p>')
+  res.send('<h1>Here\'s the <a href="https://github.com/Pot-Luck-Planner-03/Backend">README</a></h1>')
 })
 
 server.use((err, req, res, next) => { // eslint-disable-line
