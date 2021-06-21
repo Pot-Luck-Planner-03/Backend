@@ -1,6 +1,7 @@
 # POTLUCK BACKEND :)
 
-## https://git.heroku.com/potluck-planner-03.git
+##  https://potluck-planner-03.herokuapp.com/
+
 
 
 ### ----------------  ENDPOINTS  -------------------- 
@@ -8,7 +9,7 @@
 ### [POST] /register  -- creates a new user
 <details>
     <summary> WHAT TO SEND </summary>
-    ```
+    ```JSON
     {
         "username": "string",
         "password": "string"
