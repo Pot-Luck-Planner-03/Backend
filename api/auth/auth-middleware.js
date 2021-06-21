@@ -62,6 +62,7 @@ const checkUsernameExists = async (req, res, next) => {
   const { username } = req.user
   const user = await Users.findBy({ username })
   if (user) {
+    req.dbUser = user
     next()
   } else {
     next({

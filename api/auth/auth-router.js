@@ -14,19 +14,19 @@ router.post("/register", validateBody, checkusernameTaken, (req, res, next) => {
     const hash = bcrypt.hashSync(user.password, rounds)
     
     user.password = hash
+    console.log("USER HASH", user)
 
     Users.add(user)
       .then(newUser => {
-        res.status(201).json(newUser)
+        res.status(201).json(newUser[0])
       })
       .catch(next)
 });
 
 
 router.post("/login", validateBody, checkUsernameExists, (req, res, next) => {
-  let { username, password, user_id } = req.user;
-
-  if (bcrypt.compareSync(req.body.password, password)) {
+  let { username, password, user_id } = req.dbUser;
+  if (bcrypt.compareSync(req.user.password, password)) {
     const token = tokenBuilder({
     user_id,
     username
