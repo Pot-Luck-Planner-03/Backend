@@ -8,8 +8,9 @@
 
 ### [POST] /api/auth/register  -- creates a new user
 
-WHAT TO SEND
 <details>
+    <summary>WHAT TO SEND </summary>
+
 ```JSON
 {
     "username": "string",
@@ -18,8 +19,9 @@ WHAT TO SEND
 ```
 </details>
 
-WHAT YOU GET BACK 
 <details>
+    <summary>WHAT YOU GET BACK</summary>
+
 ```JSON
 {
     "username": "string",
@@ -32,29 +34,32 @@ WHAT YOU GET BACK
 ### [POST] /api/auth/login  -- logs in an existing user
 <details>
     <summary> WHAT TO SEND </summary>
-    `
+
+    ```JSON
     {
         "username": "string",
         "password": "string"
     }
-    `
+    ```
 </details>
 <details>
     <summary> WHAT YOU GET BACK </summary>
-    `
+
+    ```JSON
     {
         "message": "Welcome back username",
         "user_id": integer,
         "username": "username",
         "token": "TOKEN"
     }
-    `
+    ```
 </details>
 
 ### [GET] /api/users  -- gets list of users
 
-    WHAT YOU GET BACK 
 <details>
+     <summary>WHAT YOU GET BACK</summary>
+
     ```JSON
     [
         {
