@@ -53,21 +53,21 @@
 
 <details>
     <summary> WHAT YOU GET BACK </summary>
-    `
-    [
-        {
-            "user_id": 1,
-            "username": "RZA"
-        },
-        {
-            "user_id": 2,
-            "username": "GZA"
-        },
-        {
-            "user_id": 3,
-            "username": "ODB"
-        }
-    ]
-    `
+```JSON
+[
+    {
+        "user_id": 1,
+        "username": "RZA"
+    },
+    {
+        "user_id": 2,
+        "username": "GZA"
+    },
+    {
+        "user_id": 3,
+        "username": "ODB"
+    }
+]
+```
 </details>
 
