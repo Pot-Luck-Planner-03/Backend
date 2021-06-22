@@ -48,7 +48,7 @@
 ```JSON
 {
     "message": "Welcome back username",
-    "user_id": integer,
+    "user_id": "integer",
     "username": "username",
     "token": "TOKEN"
 }
