@@ -51,8 +51,8 @@
 
 ### [GET] /api/users  -- gets list of users
 
+    WHAT YOU GET BACK 
 <details>
-    <summary> WHAT YOU GET BACK </summary>
 ```JSON
 [
     {
