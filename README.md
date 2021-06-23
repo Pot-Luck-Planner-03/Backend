@@ -91,3 +91,24 @@
 ```
 </details>
 
+### [PUT] /api/users/:id  -- edit existing user
+<details>
+    <summary> WHAT TO SEND </summary>
+
+```JSON
+{
+    "username": "string",
+    "password": "string"
+}
+```
+</details>
+<details>
+    <summary> WHAT YOU GET BACK </summary>
+
+```JSON
+{
+    "user_id": 1,
+    "username": "RZA"
+}
+```
+</details>
