@@ -14,8 +14,7 @@ router.post("/register", validateBody, checkusernameTaken, (req, res, next) => {
     const hash = bcrypt.hashSync(user.password, rounds)
     
     user.password = hash
-    console.log("USER HASH", user)
-
+    
     Users.add(user)
       .then(newUser => {
         res.status(201).json(newUser[0])

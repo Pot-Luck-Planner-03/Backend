@@ -4,6 +4,7 @@ const cors = require('cors')
 //import router
 const authRouter = require('./auth/auth-router')
 const usersRouter = require('./users/users-router')
+const potlucksRouter = require('./potlucks/potlucks-router')
 
 const server = express()
 server.use(express.json())
@@ -13,6 +14,7 @@ server.use(cors())
 //use routers
 server.use('/api/auth', authRouter)
 server.use('/api/users', usersRouter)
+server.use('/api/potlucks', potlucksRouter)
 
 server.get('/', (req, res, next) => {
   res.send('<h1>Here\'s the <a href="https://github.com/Pot-Luck-Planner-03/Backend">README</a></h1>')

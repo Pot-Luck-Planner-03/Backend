@@ -13,6 +13,13 @@ exports.up = function(knex) {
         table.string('potluck_name')
             .notNullable()
             .unique()
+        table.integer('organizer')
+            .notNullable()
+            .unsigned()
+            .references('user_id')
+            .inTable('users')
+            .onUpdate('CASCADE')
+            .onDelete('CASCADE')
         table.text('potluck_description')
         table.date('potluck_date')
             .notNullable()
@@ -45,7 +52,6 @@ exports.up = function(knex) {
             .onUpdate('CASCADE')
             .onDelete('CASCADE')
         table.integer('attending')
-            .notNullable()
             .defaultTo('0')
     })
     .createTable('potluck_foods', table => {
@@ -64,6 +70,13 @@ exports.up = function(knex) {
             .inTable('foods')
             .onUpdate('CASCADE')
             .onDelete('CASCADE')
+        table.integer('assigned_user')
+            .unsigned()
+            .references('user_id')
+            .inTable('users')
+            .onUpdate('CASCADE')
+            .onDelete('CASCADE')
+
     })
     
 };
