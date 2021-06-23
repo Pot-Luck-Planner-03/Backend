@@ -3,6 +3,7 @@ const db = require('../data/db-config');
 function find() {
   return db('users AS u')
     .select('user_id', 'username')
+    .orderBy('user_id')
 }
 
 function findBy(filter) {
@@ -13,20 +14,30 @@ function findBy(filter) {
 }
 
 function findById(user_id) {
-    return db('users AS u')
-      .select('user_id', 'username', 'role_name')
-      .where({ user_id })
-      .first()
+  return db('users AS u')
+    .select('user_id', 'username')
+    .where({ user_id })
+    .first()
 }
 
-async function add(newUser) {
-    return db('users')
-        .insert(newUser, ['user_id', 'username'])
+async function editUser(user_id, newData) {
+  return db('users')
+    .update(newData, ['*'])
+    .where({ user_id })  
+}
+
+async function deleteUser(user_id) {
+  const deleted = await findById({ user_id })
+  db('users')
+    .where({ user_id })
+    .del()
+  return deleted
 }
 
 module.exports = {
-  add,
   find,
   findBy,
   findById,
+  editUser,
+  deleteUser
 };

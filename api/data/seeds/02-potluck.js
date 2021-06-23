@@ -5,6 +5,7 @@ exports.seed = function(knex) {
       return knex('potlucks').insert([
         {
           potluck_name: 'Tasty Foodz Partay',
+          organizer: '3',
           potluck_description: 'bring the tastiest food pls.  NO BAD FOOD',
           potluck_date: '2021/07/15',
           potluck_time: '06:00:00',
@@ -12,6 +13,7 @@ exports.seed = function(knex) {
         },
         {
           potluck_name: 'Yum Yum Food Time',
+          organizer: '1',
           potluck_description: 'yumyumyumyumyumyumyum',
           potluck_date: '2021/08/20',
           potluck_time: '05:00:00',
@@ -19,6 +21,7 @@ exports.seed = function(knex) {
         },
         {
           potluck_name: 'MM..FOOD',
+          organizer: '5',
           potluck_description: 'got more cheese than doritos, cheetos, or fritos',
           potluck_date: '2021/07/28',
           potluck_time: '07:30:00',
