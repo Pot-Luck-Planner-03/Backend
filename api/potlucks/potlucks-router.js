@@ -34,7 +34,7 @@ router.post(
 })
 
 router.put('/:id', restricted, validatePotluck, (req, res, next) => {
-    Potlucks.editPotluck(req.params.id, req.body)
+    Potlucks.editPotluck(req.params.id, req.potluck)
         .then(updated => {
             res.status(200).json(updated)
         })

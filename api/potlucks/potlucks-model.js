@@ -19,7 +19,6 @@ async function getPotlucksById(potluck_id) {
         .where('p.potluck_id', potluck_id)
         .first()
         
-    console.log("NEW POTLUCK", potluck)
     return {
         potluck_id: potluck.potluck_id,
         potluck_name: potluck.potluck_name,
