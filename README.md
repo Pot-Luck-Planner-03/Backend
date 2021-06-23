@@ -230,7 +230,34 @@
     <summary> WHAT YOU GET BACK </summary>
 
 ```JSON
-
+{
+    "potluck_id": 2,
+    "potluck_name": "Yum Yum Food Time",
+    "details": {
+        "organizer": 1,
+        "potluck_description": "yumyumyumyumyumyumyum",
+        "potluck_date": "2021-08-20T06:00:00.000Z",
+        "potluck_time": "05:00:00",
+        "potluck_location": "1111 E 2222 S, SLC UT"
+    },
+    "users": [
+        {
+            "user_id": 4,
+            "username": "Method Man",
+            "attending": "attending"
+        },
+        {
+            "user_id": 3,
+            "username": "ODB",
+            "attending": "not attending"
+        },
+        {
+            "user_id": 8,
+            "username": "U-God",
+            "attending": "attending"
+        }
+    ]
+}
 ```
 </details>
 
