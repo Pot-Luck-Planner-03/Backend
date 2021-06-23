@@ -264,3 +264,43 @@
 }
 ```
 </details>
+
+### [GET] /api/foods  -- get an array of all foods
+
+<details>
+    <summary> WHAT YOU GET BACK </summary>
+
+```JSON
+[
+    {
+        "food_id": 1,
+        "food_name": "Pineapple",
+        "food_description": "part pine, part apple"
+    },
+    {
+        "food_id": 2,
+        "food_name": "Sweet Potatoes",
+        "food_description": "mashed?  fried?  u choose"
+    },
+    {
+        "food_id": 3,
+        "food_name": "Pizza",
+        "food_description": "Veeeeegan pls"
+    }
+]
+```
+</details>
+
+### [GET] /api/foods/:id  -- gets food by ID
+
+<details>
+    <summary> WHAT YOU GET BACK </summary>
+
+```JSON
+{
+    "food_id": 1,
+    "food_name": "Pineapple",
+    "food_description": "part pine, part apple"
+}
+```
+</details>
