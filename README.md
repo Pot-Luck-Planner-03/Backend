@@ -304,3 +304,27 @@
 }
 ```
 </details>
+
+### [POST] /api/foods/  -- create new food item
+
+<details>
+    <summary> WHAT TO SEND </summary>
+
+```JSON
+{
+    "food_name": "Quesadilla",
+    "food_description": " optional string"
+}
+```
+</details>
+<details>
+    <summary> WHAT YOU GET BACK </summary>
+
+```JSON
+{
+    "food_id": 8,
+    "food_name": "",
+    "food_description": "no description yet"
+}
+```
+</details>

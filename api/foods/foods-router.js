@@ -25,7 +25,7 @@ router.get("/:id", restricted, (req, res, next) => {
 router.post("/", restricted, validateFood, foodIsUnique, (req, res, next) => {
     Foods.createFood(req.food)
         .then(newFood => {
-            res.status(201).json(newFood)
+            res.status(201).json(newFood[0])
         })
         .catch(next)
 })
