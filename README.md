@@ -78,3 +78,16 @@
 ```
 </details>
 
+### [GET] /api/users/:id  -- gets user by ID
+
+<details>
+     <summary>WHAT YOU GET BACK</summary>
+
+```JSON
+{
+    "user_id": 1,
+    "username": "RZA"
+}
+```
+</details>
+
