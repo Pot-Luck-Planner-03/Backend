@@ -214,6 +214,27 @@
 ```
 </details>
 
+### [POST] /api/potlucks/:id/users  -- adds a user to a potluck
+<details>
+    <summary> WHAT TO SEND </summary>
+
+```JSON
+{
+   "potluck_id": 2,
+   "user_id": 8,
+   "attending": 1 //0 for not attending, 1 for attending
+}
+```
+</details>
+<details>
+    <summary> WHAT YOU GET BACK </summary>
+
+```JSON
+
+```
+</details>
+
+
 ### [POST] /api/potlucks  -- creates a new potluck
 <details>
     <summary> WHAT TO SEND </summary>
