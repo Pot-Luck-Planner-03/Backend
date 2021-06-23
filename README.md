@@ -6,7 +6,7 @@
 
 ### ----------------  ENDPOINTS  -------------------- 
 
-### **LOGIN and REGISTER**
+### **-----LOGIN and REGISTER-----**
 
 ### [POST] /api/auth/register  -- creates a new user
 
@@ -57,7 +57,7 @@
 ```
 </details>
 
-## **USERS**
+## **-----USERS-----**
 
 ### [GET] /api/users  -- gets list of users
 
@@ -117,7 +117,7 @@
 ```
 </details>
 
-## **POTLUCKS**
+## **-----POTLUCKS-----**
 
 ### [GET] /api/potlucks  -- get an array of potlucks
 
@@ -265,7 +265,7 @@
 ```
 </details>
 
-## **FOODS**
+## **-----FOODS-----**
 
 ### [GET] /api/foods  -- get an array of all foods
 
