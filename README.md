@@ -113,7 +113,7 @@
 ```
 </details>
 
-### [GET] /api/potluck  -- get an array of potlucks
+### [GET] /api/potlucks  -- get an array of potlucks
 
 <details>
     <summary> WHAT YOU GET BACK </summary>
@@ -151,3 +151,22 @@
 ```
 </details>
 
+### [GET] /api/potlucks/:id  -- gets potluck by ID
+
+<details>
+     <summary>WHAT YOU GET BACK</summary>
+
+```JSON
+{
+    "potluck_id": 3,
+    "potluck_name": "MM..FOOD",
+    "details": {
+        "organizer": "Raekwon",
+        "potluck_description": "got more cheese than doritos, cheetos, or fritos",
+        "potluck_date": "2021-07-28T06:00:00.000Z",
+        "potluck_time": "07:30:00",
+        "potluck_location": "45 S 5th Ave, New York NY"
+    }
+}
+```
+</details>
