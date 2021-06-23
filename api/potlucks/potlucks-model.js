@@ -24,7 +24,7 @@ async function getPotlucksById(potluck_id) {
         potluck_id: potluck.potluck_id,
         potluck_name: potluck.potluck_name,
         details: {
-            organizer: potluck.username,
+            organizer: potluck.organizer,
             potluck_description: potluck.potluck_description,
             potluck_date: potluck.potluck_date,
             potluck_time: potluck.potluck_time,
@@ -46,13 +46,12 @@ async function getPotluckUsers(potluck_id) {
             'pu.user_id'
         )
         .where('p.potluck_id', potluck_id)
-    console.log("POTLUCK", potluck)
 
     return {
         potluck_id: potluck[0].potluck_id,
         potluck_name: potluck[0].potluck_name,
         details: {
-            organizer: potluck[0].username,
+            organizer: potluck[0].organizer,
             potluck_description: potluck[0].potluck_description,
             potluck_date: potluck[0].potluck_date,
             potluck_time: potluck[0].potluck_time,
