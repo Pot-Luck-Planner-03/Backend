@@ -28,6 +28,14 @@ router.get('/:id/users', restricted, (req, res, next) => {
         .catch(next)
 })
 
+router.post('/:id/users', restricted, (req, res, next) => {
+    Potlucks.addUserToPotluck(req.params.id, req.body)
+        .then(users => {
+            res.status(201).json(users)
+        })
+        .catch(next)
+})
+
 router.post(
     '/', 
     restricted, 

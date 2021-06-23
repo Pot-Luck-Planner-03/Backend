@@ -67,6 +67,14 @@ async function getPotluckUsers(potluck_id) {
     }
 }
 
+async function addUserToPotluck(potluck_id, data) {
+    await db('potluck_users')
+        .insert(data)
+        .where({ potluck_id })
+
+    return getPotluckUsers(potluck_id)
+}
+
 async function createPotluck(newPotluck) {
     const potluck  = await db('potlucks')
         .insert(newPotluck, ['*'])
@@ -96,6 +104,7 @@ module.exports = {
     getPotluckBy,
     getPotlucksById,
     getPotluckUsers,
+    addUserToPotluck,
     createPotluck,
     editPotluck,
     deletePotluck
