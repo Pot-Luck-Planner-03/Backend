@@ -1,5 +1,9 @@
 const router = require('express').Router()
 const Foods = require('./foods-model')
+const {
+    validateFood,
+    foodIsUnique
+} = require('./foods-middleware')
 const { restricted } = require('../auth/auth-middleware')
 
 router.get("/", restricted, (req, res, next) => {
@@ -18,16 +22,16 @@ router.get("/:id", restricted, (req, res, next) => {
         .catch(next)
 })
 
-router.post("/", restricted, (req, res, next) => {
-    Foods.createFood(req.body)
+router.post("/", restricted, validateFood, foodIsUnique, (req, res, next) => {
+    Foods.createFood(req.food)
         .then(newFood => {
             res.status(201).json(newFood)
         })
         .catch(next)
 })
 
-router.put("/:id", restricted, (req, res, next) => {
-    Foods.editFood(req.params.id, req.body)
+router.put("/:id", restricted, validateFood, foodIsUnique, (req, res, next) => {
+    Foods.editFood(req.params.id, req.food)
         .then(edited => {
             res.status(200).json(edited[0])
         })
