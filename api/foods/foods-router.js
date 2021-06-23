@@ -7,10 +7,15 @@ router.get("/", restricted, (req, res, next) => {
         .then(foods => {
             res.status(200).json(foods)
         })
+        .catch(next)
 })
 
 router.get("/:id", restricted, (req, res, next) => {
-
+    Foods.getFoodById(req.params.id)
+        .then(food => {
+            res.status(200).json(food)
+        })
+        .catch(next)
 })
 
 router.post("/", restricted, (req, res, next) => {

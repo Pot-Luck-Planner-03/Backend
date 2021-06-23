@@ -13,7 +13,7 @@ const getFoodBy = filter => {
 
 const getFoodById = food_id => {
     return db('foods AS f')
-        .where({ food_id })
+        .where('f.food_id', food_id)
         .first()
 }
 
@@ -39,6 +39,7 @@ const deleteFood = async (food_id) => {
 module.exports = {
     getFoods,
     getFoodBy,
+    getFoodById,
     createFood,
     editFood,
     deleteFood
