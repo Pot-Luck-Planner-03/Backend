@@ -170,3 +170,37 @@
 }
 ```
 </details>
+
+### [POST] /api/potlucks  -- creates a new potluck
+<details>
+    <summary> WHAT TO SEND </summary>
+
+```JSON
+{
+    "potluck_name": "string",
+    "potluck_description": "optional string",
+    "potluck_date": "2021-07-28  must be this format",
+    "potluck_time": "12:00:00 must be this format",
+    "potluck_location": "string",
+    "organizer": "integer"
+
+}
+```
+</details>
+<details>
+    <summary> WHAT YOU GET BACK </summary>
+
+```JSON
+{
+    "potluck_id": 3,
+    "potluck_name": "MM..FOOD",
+    "details": {
+        "organizer": "Raekwon",
+        "potluck_description": "got more cheese than doritos, cheetos, or fritos",
+        "potluck_date": "2021-07-28T06:00:00.000Z",
+        "potluck_time": "07:30:00",
+        "potluck_location": "45 S 5th Ave, New York NY"
+    }
+}
+```
+</details>
