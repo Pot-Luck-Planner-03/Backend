@@ -265,6 +265,8 @@
 ```
 </details>
 
+## **FOODS**
+
 ### [GET] /api/foods  -- get an array of all foods
 
 <details>
