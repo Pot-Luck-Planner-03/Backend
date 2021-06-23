@@ -29,13 +29,17 @@ router.post("/", restricted, (req, res, next) => {
 router.put("/:id", restricted, (req, res, next) => {
     Foods.editFood(req.params.id, req.body)
         .then(edited => {
-            res.status(200).json(edited)
+            res.status(200).json(edited[0])
         })
         .catch(next)
 })
 
 router.delete("/:id", restricted, (req, res, next) => {
-
+    Foods.deleteFood(req.params.id)
+        .then(deleted => {
+            res.status(200).json(deleted)
+        })
+        .catch(next)
 })
 
 module.exports = router
