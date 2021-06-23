@@ -19,11 +19,19 @@ router.get("/:id", restricted, (req, res, next) => {
 })
 
 router.post("/", restricted, (req, res, next) => {
-
+    Foods.createFood(req.body)
+        .then(newFood => {
+            res.status(201).json(newFood)
+        })
+        .catch(next)
 })
 
 router.put("/:id", restricted, (req, res, next) => {
-
+    Foods.editFood(req.params.id, req.body)
+        .then(edited => {
+            res.status(200).json(edited)
+        })
+        .catch(next)
 })
 
 router.delete("/:id", restricted, (req, res, next) => {

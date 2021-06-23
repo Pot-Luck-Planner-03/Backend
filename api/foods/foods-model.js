@@ -22,10 +22,10 @@ const createFood = newFood => {
         .insert(newFood, ['*'])
 }
 
-const editFood = (foods_id, edits) => {
+const editFood = (food_id, edits) => {
     return db('foods AS f')
         .update(edits, ['*'])
-        .where({ foods_id })
+        .where({ food_id })
 }
 
 const deleteFood = async (food_id) => {
