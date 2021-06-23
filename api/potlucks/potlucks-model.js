@@ -33,6 +33,41 @@ async function getPotlucksById(potluck_id) {
     }
 }
 
+async function getPotluckUsers(potluck_id) {
+    let potluck = await db('potlucks AS p')
+        .join(
+            'potluck_users AS pu',
+            'pu.potluck_id',
+            'p.potluck_id'
+        )
+        .join(
+            'users AS u',
+            'u.user_id',
+            'pu.user_id'
+        )
+        .where('p.potluck_id', potluck_id)
+    console.log("POTLUCK", potluck)
+
+    return {
+        potluck_id: potluck[0].potluck_id,
+        potluck_name: potluck[0].potluck_name,
+        details: {
+            organizer: potluck[0].username,
+            potluck_description: potluck[0].potluck_description,
+            potluck_date: potluck[0].potluck_date,
+            potluck_time: potluck[0].potluck_time,
+            potluck_location: potluck[0].potluck_location
+        },
+        users: potluck.map(user => {
+            return ({
+                user_id: user.user_id,
+                username: user.username,
+                attending: user.attending ? 'attending' : 'not attending'
+            })
+        })
+    }
+}
+
 async function createPotluck(newPotluck) {
     const potluck  = await db('potlucks')
         .insert(newPotluck, ['*'])
@@ -61,6 +96,7 @@ module.exports = {
     getPotlucks,
     getPotluckBy,
     getPotlucksById,
+    getPotluckUsers,
     createPotluck,
     editPotluck,
     deletePotluck
