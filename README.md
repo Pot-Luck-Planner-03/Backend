@@ -112,3 +112,42 @@
 }
 ```
 </details>
+
+### [GET] /api/potluck  -- get an array of potlucks
+
+<details>
+    <summary> WHAT YOU GET BACK </summary>
+
+```JSON
+[
+    {
+        "potluck_id": 1,
+        "potluck_name": "Tasty Foodz Partay",
+        "organizer": 3,
+        "potluck_description": "bring the tastiest food pls.  NO BAD FOOD",
+        "potluck_date": "2021-07-15T06:00:00.000Z",
+        "potluck_time": "06:00:00",
+        "potluck_location": "1403 Park Ave, Long Beach CA"
+    },
+    {
+        "potluck_id": 2,
+        "potluck_name": "Yum Yum Food Time",
+        "organizer": 1,
+        "potluck_description": "yumyumyumyumyumyumyum",
+        "potluck_date": "2021-08-20T06:00:00.000Z",
+        "potluck_time": "05:00:00",
+        "potluck_location": "1111 E 2222 S, SLC UT"
+    },
+    {
+        "potluck_id": 3,
+        "potluck_name": "MM..FOOD",
+        "organizer": 5,
+        "potluck_description": "got more cheese than doritos, cheetos, or fritos",
+        "potluck_date": "2021-07-28T06:00:00.000Z",
+        "potluck_time": "07:30:00",
+        "potluck_location": "45 S 5th Ave, New York NY"
+    }
+]
+```
+</details>
+
