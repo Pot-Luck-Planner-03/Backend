@@ -442,6 +442,9 @@
 ```
 </details>
 
+
+
+
 ### [DELETE] /api/potlucks/:id  -- delete existing potluck
 
 <details>
@@ -459,6 +462,16 @@
         "potluck_location": "45 S 5th Ave, New York NY"
     }
 }
+```
+</details>
+
+### [DELETE] /api/potlucks/:potluck_food_id/foods  -- delete existing food item in a potluck
+
+<details>
+    <summary> WHAT YOU GET BACK </summary>
+
+```JSON
+"successfully removed item"
 ```
 </details>
 

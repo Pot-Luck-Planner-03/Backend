@@ -52,7 +52,7 @@ router.post('/:id/foods', restricted, (req, res, next) => {
         .catch(next)
 })
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id/foods', restricted, (req, res, next) => {
     Potlucks.removeFoodFromPotluck(req.params.id, req.params.food_id)
         .then(newList => {
             res.status(200).json(newList)
