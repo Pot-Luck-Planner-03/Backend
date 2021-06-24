@@ -35,7 +35,7 @@ async function getUserPotlucks(user_id) {
   let userPotlucks = potlucks.map( potluck => {
     //orgainzer logic would need to change if you change if you are able to delete a user
       return({
-        attending: potluck.attending,
+        attending: potluck.attending ? 'attending' : 'not attending',
         potluck_id: potluck.potluck_id,
         potluck_name: potluck.potluck_name,
         organizer: users[potluck.organizer].username,  
