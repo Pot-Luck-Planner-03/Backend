@@ -130,6 +130,7 @@
 ```
 </details>
 
+
 ### [PUT] /api/users/:id  -- edit existing user
 <details>
     <summary> WHAT TO SEND </summary>
@@ -238,6 +239,35 @@
             "user_id": 3,
             "username": "ODB",
             "attending": "not attending"
+        }
+    ]
+}
+```
+</details>
+
+### [GET] /api/potlucks/:id/foods  -- gets the foods for a specific potluck 
+
+<details>
+     <summary>WHAT YOU GET BACK</summary>
+
+```JSON
+{
+    "potluck_id": 3,
+    "foods": [
+        {
+            "food_id": 1,
+            "food_name": "Pineapple",
+            "food_description": "part pine, part apple"
+        },
+        {
+            "food_id": 2,
+            "food_name": "Sweet Potatoes",
+            "food_description": "mashed?  fried?  u choose"
+        },
+        {
+            "food_id": 6,
+            "food_name": "Ramen",
+            "food_description": ""
         }
     ]
 }
