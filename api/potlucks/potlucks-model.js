@@ -75,6 +75,27 @@ async function addUserToPotluck(potluck_id, data) {
     return getPotluckUsers(potluck_id)
 }
 
+async function getPotluckFoods(potluck_id) {
+    let potluck = await db('potluck_foods AS pf')
+        .join(
+            'foods AS f',
+            'f.food_id',
+            'pf.food_id'
+        )
+        .where('pf.potluck_id', potluck_id)
+
+    return {
+        potluck_id: potluck[0].potluck_id,
+        foods: potluck.map(food => {
+            return ({
+                food_id: food.food_id,
+                food_name: food.food_name,
+                food_description: food.food_description
+            })
+        })
+    }
+}
+
 async function createPotluck(newPotluck) {
     const potluck  = await db('potlucks')
         .insert(newPotluck, ['*'])
@@ -104,6 +125,7 @@ module.exports = {
     getPotluckBy,
     getPotlucksById,
     getPotluckUsers,
+    getPotluckFoods,
     addUserToPotluck,
     createPotluck,
     editPotluck,
