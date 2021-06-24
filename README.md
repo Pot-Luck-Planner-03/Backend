@@ -274,6 +274,17 @@
 ```
 </details>
 
+
+
+
+
+
+
+
+
+
+
+
 ### [POST] /api/potlucks/:id/users  -- adds a user to a potluck
 <details>
     <summary> WHAT TO SEND </summary>
@@ -315,6 +326,47 @@
             "user_id": 8,
             "username": "U-God",
             "attending": "attending"
+        }
+    ]
+}
+```
+</details>
+
+### [POST] /api/potlucks/:id/foods  -- adds a food item to a potluck
+<details>
+    <summary> WHAT TO SEND </summary>
+
+```JSON
+{
+    "potluck_id": 3,
+    "food_id": 2
+}
+```
+</details>
+<details>
+    <summary> WHAT YOU GET BACK </summary>
+
+```JSON
+{
+    "potluck_id": 3,
+    "foods": [
+        {
+            "food_id": 1,
+            "food_name": "Pineapple",
+            "food_description": "part pine, part apple",
+            "potluck_food_id": 4
+        },
+        {
+            "food_id": 2,
+            "food_name": "Sweet Potatoes",
+            "food_description": "mashed?  fried?  u choose",
+            "potluck_food_id": 18
+        },
+        {
+            "food_id": 5,
+            "food_name": "Masala",
+            "food_description": "better make me sweat",
+            "potluck_food_id": 20
         }
     ]
 }
