@@ -95,6 +95,41 @@
 ```
 </details>
 
+### [GET] /api/users/:id/potlucks  -- gets all the potlucks a user has been invited to 
+
+<details>
+     <summary>WHAT YOU GET BACK</summary>
+
+```JSON
+{
+    "user_id": "8",
+    "username": "U-God",
+    "potlucks": [
+        {
+            "attending": 1,
+            "potluck_id": 3,
+            "potluck_name": "MM..FOOD",
+            "organizer": "Ghostface Killah",
+            "potluck_description": "got more cheese than doritos, cheetos, or fritos",
+            "potluck_date": "2021-07-28T06:00:00.000Z",
+            "potluck_time": "07:30:00",
+            "potluck_location": "45 S 5th Ave, New York NY"
+        },
+        {
+            "attending": 1,
+            "potluck_id": 2,
+            "potluck_name": "Yum Yum Food Time",
+            "organizer": "GZA",
+            "potluck_description": "yumyumyumyumyumyumyum",
+            "potluck_date": "2021-08-20T06:00:00.000Z",
+            "potluck_time": "05:00:00",
+            "potluck_location": "1111 E 2222 S, SLC UT"
+        }
+    ]
+}
+```
+</details>
+
 ### [PUT] /api/users/:id  -- edit existing user
 <details>
     <summary> WHAT TO SEND </summary>
