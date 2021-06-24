@@ -90,17 +90,28 @@ async function getPotluckFoods(potluck_id) {
             return ({
                 food_id: food.food_id,
                 food_name: food.food_name,
-                food_description: food.food_description
+                food_description: food.food_description,
+                potluck_food_id: food.potluck_food_id
             })
         })
     }
 }
 
 async function addFoodToPotluck(potluck_id, data) {
-    await db('potluck_foods AS pf')
-        .insert(data)
-        .where({ potluck_id })
+    const newFood = await db('potluck_foods AS pf')
+        .insert(data, ["*"])
+        .where('pf.potluck_id', potluck_id)
+    return getPotluckFoods(newFood[0].potluck_id)
 }
+
+async function removeFoodFromPotluck(potluck_food_id) {
+   await db('potluck_foods AS pf')
+    .del()
+    .where({ potluck_food_id })
+
+    return 'successfully removed item'
+}
+
 
 async function createPotluck(newPotluck) {
     const potluck  = await db('potlucks')
@@ -134,6 +145,7 @@ module.exports = {
     getPotluckFoods,
     addUserToPotluck,
     addFoodToPotluck,
+    removeFoodFromPotluck,
     createPotluck,
     editPotluck,
     deletePotluck
