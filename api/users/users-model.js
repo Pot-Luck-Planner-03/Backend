@@ -20,6 +20,22 @@ function findById(user_id) {
     .first()
 }
 
+async function getUserPotlucks(user_id) {
+  const user = await findById(user_id)
+  const potlucks = db('potlucks AS p')
+    .join(
+      'potluck_users AS pu',
+      'pu.potluck_id',
+      'p.potluck_id'
+      )
+    .where('pu.user_id', user_id)
+
+console.log("USER", user)
+console.log("POTLUCKS", potlucks)
+
+  return potlucks
+}
+
 async function editUser(user_id, newData) {
   return db('users')
     .update(newData, ['*'])
@@ -34,10 +50,14 @@ async function deleteUser(user_id) {
   return deleted
 }
 
+
+
+
 module.exports = {
   find,
   findBy,
   findById,
+  getUserPotlucks,
   editUser,
   deleteUser
 };

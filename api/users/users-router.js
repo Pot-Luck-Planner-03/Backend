@@ -18,6 +18,13 @@ router.get("/:user_id", restricted, (req, res, next) => {
     .catch(next);
 });
 
+router.get("/:user_id/potlucks", restricted, (req, res, next) => {
+  Users.getUserPotlucks(req.params.user_id)
+    .then(potlucks => {
+      res.status(200).json(potlucks)
+    })
+})
+
 router.put("/:user_id", restricted, (req, res, next) => {
   Users.editUser(req.params.user_id, req.body)
     .then(edited => {
