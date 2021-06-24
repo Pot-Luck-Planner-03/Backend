@@ -44,6 +44,14 @@ router.post('/:id/users', restricted, (req, res, next) => {
         .catch(next)
 })
 
+router.post('/:id/foods', restricted, (req, res, next) => {
+    Potlucks.addFoodToPotluck(req.params.id, req.body)
+        .then(foods => {
+            res.status(201).json(foods)
+        })
+        .catch(next)
+})
+
 router.post(
     '/', 
     restricted, 
