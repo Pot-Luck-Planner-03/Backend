@@ -203,11 +203,6 @@
             "user_id": 3,
             "username": "ODB",
             "attending": "not attending"
-        },
-        {
-            "user_id": 8,
-            "username": "U-God",
-            "attending": "attending"
         }
     ]
 }
