@@ -1,5 +1,10 @@
 const db = require('../data/db-config');
 
+function add(user) {
+  return db('users AS u')
+    .insert(user, ['*'])
+}
+
 function find() {
   return db('users AS u')
     .select('user_id', 'username')
@@ -95,6 +100,7 @@ async function deleteUser(user_id) {
 
 
 module.exports = {
+  add,
   find,
   findBy,
   findById,
