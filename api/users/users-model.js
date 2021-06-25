@@ -52,6 +52,18 @@ async function getUserPotlucks(user_id) {
   }
 }
 
+async function getOrganizerPotlucks(organizer) {
+  const potlucks = await db('potlucks AS p')
+    .join(
+      'users AS u',
+      'u.user_id',
+      'p.organizer'
+      )
+    .where('p.organizer', organizer)
+    .orderBy('p.potluck_date')
+  return potlucks
+}
+
 async function editUser(user_id, newData) {
   return db('users')
     .update(newData, ['*'])
@@ -74,6 +86,7 @@ module.exports = {
   findBy,
   findById,
   getUserPotlucks,
+  getOrganizerPotlucks,
   editUser,
   deleteUser
 };
