@@ -130,6 +130,39 @@
 ```
 </details>
 
+### [GET] /api/users/:organizer_id/organizer_potlucks  -- gets all the potlucks a user has created
+
+<details>
+     <summary>WHAT YOU GET BACK</summary>
+
+```JSON
+[
+    {
+        "potluck_id": 1,
+        "potluck_name": "Tasty Foodz Partay",
+        "organizer": 3,
+        "details": {
+            "potluck_description": "bring the tastiest food pls.  NO BAD FOOD",
+            "potluck_date": "2021-07-15T06:00:00.000Z",
+            "potluck_time": "06:00:00",
+            "potluck_location": "1403 Park Ave, Long Beach CA"
+        }
+    },
+    {
+        "potluck_id": 5,
+        "potluck_name": "36 chambers",
+        "organizer": 3,
+        "details": {
+            "potluck_description": "Wu Tang Clan aint nuthin to BRUNCH with",
+            "potluck_date": "2021-07-28T06:00:00.000Z",
+            "potluck_time": "12:00:00",
+            "potluck_location": "straight from the Shaolin slums"
+        }
+    }
+]
+```
+</details>
+
 
 ### [PUT] /api/users/:id  -- edit existing user
 <details>

@@ -61,7 +61,20 @@ async function getOrganizerPotlucks(organizer) {
       )
     .where('p.organizer', organizer)
     .orderBy('p.potluck_date')
-  return potlucks
+
+  return potlucks.map(potluck => {
+    return ({
+      potluck_id: potluck.potluck_id,
+      potluck_name: potluck.potluck_name,
+      organizer: potluck.organizer,
+      details: {
+        potluck_description: potluck.potluck_description,
+        potluck_date: potluck.potluck_date,
+        potluck_time: potluck.potluck_time,
+        potluck_location: potluck.potluck_location,
+      }
+    })
+  })
 }
 
 async function editUser(user_id, newData) {
